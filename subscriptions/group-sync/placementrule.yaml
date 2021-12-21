@@ -1,0 +1,16 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: github-group-sync-deploy
+  labels:
+    app: github-group-sync
+spec:
+  clusterConditions:
+    - type: ManagedClusterConditionAvailable
+      status: "True"
+  #clusters:
+  #- name: cluster1
+  clusterSelector:
+    matchLabels:
+      usage: group-sync
+  #clusterReplicas: 1  #Apply to how many matched clusters, default is ALL

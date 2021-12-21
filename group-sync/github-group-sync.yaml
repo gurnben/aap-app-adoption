@@ -1,0 +1,21 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: GroupSync
+metadata:
+  name: github-groupsync
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  providers:
+    - name: github
+      github:
+        organization: open-cluster-management
+        credentialsSecret:
+          name: github-group-sync
+          namespace: group-sync-operator
+    - name: github
+      github:
+        organization: identitatem
+        credentialsSecret:
+          name: github-group-sync
+          namespace: group-sync-operator
+  schedule: 0/10 * * * *
