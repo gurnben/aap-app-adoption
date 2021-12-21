@@ -1,5 +1,5 @@
 resources:
 - namespace.yaml
 - acm-subscription.yaml
-- applicatin.yaml
+- application.yaml
 - placementrule.yaml
