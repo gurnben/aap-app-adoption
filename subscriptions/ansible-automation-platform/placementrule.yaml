@@ -13,5 +13,5 @@ spec:
   #- name: cluster1
   clusterSelector:
     matchLabels:
-      usage: ansible-automation-platform
+      ansible-automation-platform: "true"
   #clusterReplicas: 1  #Apply to how many matched clusters, default is ALL
