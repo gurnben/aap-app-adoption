@@ -1,0 +1,9 @@
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: aapaas-managed-rbac
+  namespace: rbac
+spec:
+  selector:
+    matchLabels:
+      app: aapaas-managed-rbac

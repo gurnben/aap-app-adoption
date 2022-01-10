@@ -1,0 +1,17 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: aapaas-managed-rbac-deploy
+  namespace: rbac
+  labels:
+    app: aapaas-managed-rbac
+spec:
+  clusterConditions:
+    - type: ManagedClusterConditionAvailable
+      status: "True"
+  #clusters:
+  #- name: cluster1
+  clusterSelector:
+    matchLabels:
+      aapaas-managed-rbac: "true"
+  #clusterReplicas: 1  #Apply to how many matched clusters, default is ALL

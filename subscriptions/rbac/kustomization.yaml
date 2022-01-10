@@ -1,0 +1,7 @@
+namespace: group-sync-operator
+
+resources:
+- namespace.yaml
+- acm-subscription.yaml
+- application.yaml
+- placementrule.yaml
